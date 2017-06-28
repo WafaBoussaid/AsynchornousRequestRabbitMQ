@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.karco.KarcoWClientTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.159 sec - in com.karco.KarcoWClientTests

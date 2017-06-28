@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KarCo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../static/css/landingkarco.min.css" rel="stylesheet">
+    <!-- Toastr -->
+    <link href="../static/css/toastr.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" href="../static/css/bootstrap-material-datetimepicker.css" />
+	<link href="../static/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/custom.css" rel="stylesheet" type="text/css">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top"><i class="fa fa-car fa-1x "></i>KarCo</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll notificationZone hidden">
+                        <a href="#notificationZone">PROPOSITIONS<span id="propositionCounter" class="badge orange">0</span></a>
+                    </li>
+                    <li class="page-scroll hidden">
+                        <a href="#mainMap">Favoris</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" id="mainZoneSearch">
+                    <div class="col-lg-7 " >
+                    <div class="white-text intro-text wow fadaeIn animated" style="visibility: visible;">
+                                    <h2 class="intro-heading pb-1 bold-font">Voyageons ensemble autrement</h2>
+                                    <hr class="hr-dark hidden-sm-down">
+                                    <h3 class="intro-subtext pt-1 pb-1 hidden-sm-down"></h3>
+                                </div>
+					</div>
+					<div class="col-lg-5">
+						<div class="card ">
+                                        <div class="card-block">
+                                            
+                                            <div class="text-xs-center default-color-dark" >
+                                                <h3 class="mt-1 mb-1">Nouvelle demande</h3>
+                                                
+                                            </div>
+
+                                            <div class="pt-1">
+            <div class="form-group row ">
+                          <label for="example-text-input" class="col-xs-3 col-form-label">Départ</label>
+                          <div class="col-xs-9">
+                            <input class="form-control" type="text" placeholder="2 boulevard haussmann 75009 paris" id="departureAddressInput">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Arrivée</label>
+                          <div class="col-xs-9">
+                            <input class="form-control" type="search" placeholder="15 rue du louvre 75001" id="arrivalAddressInput">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Date départ</label>
+                          <div class="col-xs-9">
+                            <input id="departureTime" class="form-control date-fr" type="search" value="" >
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Date arrivée</label>
+                          <div class="col-xs-9">
+                            <input id="arrivalTime" class="form-control date-fr" type="search" value="" >
+                          </div>
+                        </div>
+                        <div class="form-group row">                            
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Déviation (min)</label>
+                          <div class="col-xs-9">
+                            <input type="number" id="deviation-time" class="form-control " value="15" >
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Prix max(€)</label>
+                          <div class="col-xs-9">
+                            <input id="max_price" class="form-control" type="number" value="20"/>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Type véhicule</label>
+                          <div class="col-xs-9">
+                            <select class="form-control" id="vehiculeTypeSelect">
+                                <option value="-1" disabled selected>type véhicule...</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-search-input" class="col-xs-3 col-form-label">Covoitureur(s)</label>
+                          <div class="col-xs-9">
+                            <input id="covoitureurs" class="form-control" type="number" value="0"/>
+                          </div>
+                        </div>
+            
+
+                            <div class="text-xs-center">
+                                <button id="searchBtn" class="btn btn-lg default-color-dark mb-1 waves-effect waves-light">Chercher</button>
+                            </div>
+                        </div>
+                                            
+                            </div>
+                        </div>
+					</div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+</div>
+
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                       
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Suivez Karco</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; KarCo 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="../static/img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="#">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="#">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="#">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="#">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div id="waitingModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-header ">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3 class="modal-title">Recherche en cours...</h3>
+		</div>
+		<div class="modal-body white">
+			<div class="hidden" id="noSuggestion"> 
+				<h3 class="label label-warning">Aucune correspondance possible avec ces critères</h3>
+			</div>
+		<div class="white hidden" id="resultSuggestion">
+		<table class="table">
+		    <thead>
+		        <tr class="table-active">
+		            <th></th>
+		            <th>Demande</th>
+		            <th>Proposition</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>Prix</td>
+		            <td id="demandePrice"></td>
+		            <td id="suggestionPrice"></td>
+		        </tr>
+		        <tr>
+		            <td>Covoitureur</td>
+		            <td id="demandePassenger"></td>
+		            <td id="suggestionPassenger"></td>
+		        </tr>
+		        <tr>
+		            <td>Déviation</td>
+		            <td id="demandeDelay"></td>
+		            <td id="suggestionDelay"></td>
+		        </tr>
+		        <tr>
+		            <td>Véhicule</td>
+		            <td id="suggestionVehicule"  class="center" colspan="2"></td>
+		        </tr>
+		         <tr>
+		            <td>Durée initiale</td>
+		            <td id="suggestionDuration"  class="center" colspan="2"></td>
+		        </tr>
+		         <tr>
+		            <td>Distance initiale</td>
+		            <td id="suggestionDistance" class="center" colspan="2"></td>
+		        </tr>
+		        
+		    </tbody>
+		</table>
+ 			</div>
+			<!-- <div  id="spinnerLoader" class="spinner">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div> -->
+			
+			
+		</div>
+		
+		<div class="modal-footer white">
+    		<a href="#" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-clock-o"></i>&nbsp;Attendre</a>
+    		<a href="#" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i>&nbsp;Accepter</a>
+		</div>
+	</div>
+
+    <div id="propositionsModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-header btn-success">
+
+             <button type="button" class="close" data-dismiss="modal">×</button> 
+             <h3 class="modal-title">Liste des propositions</h3>          
+        </div>
+        <div id="responseListBody" class="modal-body white"> 
+                    
+        </div>       
+        
+    </div>
+	
+    <!-- jQuery -->
+    <script src="../static/lib/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../static/js/jqBootstrapValidation.js"></script>
+    <script src="../static/js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/freelancer.min.js"></script>
+    <script src="../static/js/moment.js"></script>
+    <script src="../static/js/material.min.js"></script>
+    <script src="../static/js/bootstrap-material-datetimepicker.js"></script>
+    <script type="text/javascript" src="../static/js/toastr.js"/>
+        
+    <script src="../static/js/datetimepicker-moments.js"></script>
+    
+    <script src="../static/js/index.js"></script>
+	<script type="text/javascript" src="../static/lib/jquery/jquery-ui.js" />
+	<script type="text/javascript" src="../static/lib/jquery/autocomplete.js"/>
+	</script>
+</body>
+
+</html>

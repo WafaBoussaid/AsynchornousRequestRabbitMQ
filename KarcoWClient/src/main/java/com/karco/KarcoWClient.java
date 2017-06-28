@@ -1,0 +1,12 @@
+package com.karco;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class KarcoWClient {
+
+	public static void main(String[] args) {
+		SpringApplication.run(KarcoWClient.class, args);
+	}
+}
