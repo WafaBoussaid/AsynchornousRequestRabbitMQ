@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: AddressWS-rest
+Implementation-Version: 1.0.0
+Built-By: Ala
+Implementation-Vendor-Id: com.karco
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/AddressWS-pa
+ rent/AddressWS-rest/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
