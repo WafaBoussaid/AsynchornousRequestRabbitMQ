@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: AddressWS-mq-consumer
+Implementation-Version: 1.0.0
+Built-By: Wafa
+Implementation-Vendor-Id: com.karco
+Build-Jdk: 1.8.0_102
+Implementation-URL: http://projects.spring.io/spring-boot/AddressWS-pa
+ rent/AddressWS-mq-consumer/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

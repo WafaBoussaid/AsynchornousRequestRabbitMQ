@@ -1,0 +1,4 @@
+com\karco\mq\CustomErrorHandler.class
+com\karco\mq\service\MessageListener.class
+com\karco\mq\RabbitMQConsumerConfig.class
+com\karco\mq\RabbitMQConsumerConfig$MyFatalExceptionStrategy.class
