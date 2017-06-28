@@ -1,0 +1,8 @@
+com\karco\MqModuleApplication.class
+com\karco\services\DemandeBusinessRestService.class
+com\karco\entities\Address.class
+com\karco\services\AddressBusinessRestService.class
+com\karco\mq\domain\MqMessage.class
+com\karco\mq\RabbitMQProducerConfig.class
+com\karco\entities\Demande.class
+com\karco\util\MQHelper.class

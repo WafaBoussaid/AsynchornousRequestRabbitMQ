@@ -1,0 +1,8 @@
+D:\addresses_project\MQ-module\src\main\java\com\karco\entities\Address.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\mq\domain\MqMessage.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\util\MQHelper.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\MqModuleApplication.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\services\DemandeBusinessRestService.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\mq\RabbitMQProducerConfig.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\services\AddressBusinessRestService.java
+D:\addresses_project\MQ-module\src\main\java\com\karco\entities\Demande.java
